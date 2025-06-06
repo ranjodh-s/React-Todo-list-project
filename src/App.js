@@ -21,9 +21,6 @@ function App() {
   }
   else {
     initTodo = JSON.parse(localStorage.getItem("todos"));
-
-
-    // setTodos(initTodo)
   }
   const [todos, setTodos] = useState(initTodo);
 
@@ -55,18 +52,6 @@ function App() {
     console.log(myTodo);
   }
 
-
-
-  // if(initTodo!=[]){
-  //   const [todos, setTodos] = useState([initTodo]);
-  // }else{
-  //   const [todos, setTodos] = useState([]);
-
-  // }
-
-
-  // const [todos, setTodos] = useState([]);
-
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos))
   }, [todos])
@@ -79,13 +64,13 @@ function App() {
           <Route exact path="/" element={
             <>
               <AddTodo addTodo={addTodo} />
-              
+
               <Todo todo={todos} onDelete={onDelete} />
             </>
           }>
           </Route>
           <Route exact path="/about" element={<About />}>
-            {/* <About /> */}
+
           </Route>
         </Routes>
 
