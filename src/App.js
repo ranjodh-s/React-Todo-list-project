@@ -25,17 +25,17 @@ function App() {
   const [todos, setTodos] = useState(initTodo);
 
   const onDelete = (todo) => {
-    console.log("I am onDelete of todo", todo)
+
     setTodos(todos.filter((e) => {
       return e !== todo;
     }));
-    console.log("deleted", todos)
+
     localStorage.setItem("todos", JSON.stringify(todos))
   }
 
 
   const addTodo = (title, desc) => {
-    console.log("I am adding this todo", title, desc)
+
     let sno;
     if (todos.length === 0) {
       sno = 0;
@@ -49,7 +49,7 @@ function App() {
       desc: desc
     }
     setTodos([...todos, myTodo])
-    console.log(myTodo);
+
   }
 
   useEffect(() => {
